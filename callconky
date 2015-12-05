@@ -1,0 +1,11 @@
+#!/bin/bash
+
+killall conky
+
+sleep 3
+
+conky -c ./.conkyrc-service & 
+conky -c ./.conkyrc-net &
+conky -c ./.conkyrc-drives &
+conky -c ./.conkyrc-cpu &
+conky -c ./.conkyrc-ram &

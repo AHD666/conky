@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#if ping -c 1 -W 1 $1 > /dev/null; then
+#echo "q"
+#else
+#echo "f"
+#fi
+export PINGHOST=$1
+ping -c 1 -W 1 $1 > /dev/null
+case $? in
+	0) export PINGHOST=`nslookup -class=IN -timeout=1 $1 | grep -m 2 Address | grep -v 127.0 | grep -v '10.0.0.10#' | grep -v '10.0.0.11#' | cut -c 10-`
+	   echo '${voffset 1}${font}${color light green}'$1'${goto 130}${alignr}'$PINGHOST'${color}${font}' ;;
+	1) export PINGHOST=`nslookup -class=IN -timeout=1 $1 | grep -m 2 Address | grep -v 127.0 | grep -v '10.0.0.10#' | grep -v '10.0.0.11#' | cut -c 10-`
+	   echo '${voffset 1}${font}${color yellow}'$1'${goto 130}${alignr}'$PINGHOST'${color}${font}' ;;
+	2) echo '${voffset 1}${font}${color orange}'$1'${goto 130}${alignr}DNS Error${color}${font}' ;;
+esac
