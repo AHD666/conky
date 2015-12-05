@@ -1,0 +1,85 @@
+use_xft yes
+xftfont agave:size=8
+#xftfont agave:size=9
+update_interval 1
+total_run_times 0
+
+text_buffer_size 2048
+double_buffer yes
+no_buffers yes
+
+own_window yes
+#own_window_color 3D3D3D
+#own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+#border_margin 0
+#default_color ffffff
+default_color 000000
+#default_color C8CDFF
+default_shade_color black
+default_outline_color black
+default_bar_size 150 8
+
+#uppercase yes
+override_utf8_locale no
+
+alignment top_left
+gap_x 400
+gap_y 50
+minimum_size 230
+short_units yes
+pad_percents 2
+maximum_width 240
+
+####################################################################################################
+#  Output
+####################################################################################################
+
+TEXT
+${color light green}${font Ubuntu:size=12}NETWORK${hr 1}${font}
+
+Hostname ${alignr}${nodename_short}
+LAN IP (${gw_iface}): ${alignr}${addr eth0}
+Gateway: ${alignr}${gw_ip}
+DNS: ${alignr}${nameserver}
+
+#Public IP: ${alignr}${execi 10 ~/bin/getip dobeshow.int-dyn.de}
+Public IP: ${alignr}----
+Total Up/Down eth0: ${alignr}${totalup eth0} / ${totaldown eth0}
+
+Down    ${downspeedgraph eth0 99ff9e 99ff9d}
+${voffset -25}${downspeed eth0}
+
+Up      ${upspeedgraph eth0 FFAAE2 FFAAE3}
+${voffset -25}${upspeed eth0}
+
+Port(s)${alignr}#Connections
+Inbound: ${tcp_portmon 1 32767 count}  Outbound: ${tcp_portmon 32768 61000 count}${alignr} ALL: ${tcp_portmon 1 65535 count}
+
+Outbound Connection ${alignr} Remote Service/Port
+ ${tcp_portmon 32768 61000 rhost 0} ${alignr} ${tcp_portmon 32768 61000 rservice 0}
+ ${tcp_portmon 32768 61000 rhost 1} ${alignr} ${tcp_portmon 32768 61000 rservice 1}
+ ${tcp_portmon 32768 61000 rhost 2} ${alignr} ${tcp_portmon 32768 61000 rservice 2}
+ ${tcp_portmon 32768 61000 rhost 3} ${alignr} ${tcp_portmon 32768 61000 rservice 3}
+ ${tcp_portmon 32768 61000 rhost 4} ${alignr} ${tcp_portmon 32768 61000 rservice 4}
+ ${tcp_portmon 32768 61000 rhost 5} ${alignr} ${tcp_portmon 32768 61000 rservice 5}
+ ${tcp_portmon 32768 61000 rhost 6} ${alignr} ${tcp_portmon 32768 61000 rservice 6}
+ ${tcp_portmon 32768 61000 rhost 7} ${alignr} ${tcp_portmon 32768 61000 rservice 7}
+ ${tcp_portmon 32768 61000 rhost 8} ${alignr} ${tcp_portmon 32768 61000 rservice 8}
+ ${tcp_portmon 32768 61000 rhost 9} ${alignr} ${tcp_portmon 32768 61000 rservice 9}
+ ${tcp_portmon 32768 61000 rhost 10} ${alignr} ${tcp_portmon 32768 61000 rservice 10}
+ ${tcp_portmon 32768 61000 rhost 11} ${alignr} ${tcp_portmon 32768 61000 rservice 11}
+
+Inbound Connection ${alignr} Local Service/Port
+ ${tcp_portmon 1 32767 rhost 0} ${alignr} ${tcp_portmon 1 32767 lservice 0}
+ ${tcp_portmon 1 32767 rhost 1} ${alignr} ${tcp_portmon 1 32767 lservice 1}
+ ${tcp_portmon 1 32767 rhost 2} ${alignr} ${tcp_portmon 1 32767 lservice 2}
+ ${tcp_portmon 1 32767 rhost 3} ${alignr} ${tcp_portmon 1 32767 lservice 3}
+ ${tcp_portmon 1 32767 rhost 4} ${alignr} ${tcp_portmon 1 32767 lservice 4}

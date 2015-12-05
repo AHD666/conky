@@ -1,0 +1,104 @@
+use_xft yes
+xftfont agave:size=10
+update_interval 1
+total_run_times 0
+
+text_buffer_size 2048
+double_buffer yes
+no_buffers yes
+
+own_window yes
+#own_window_color 3D3D3D
+#own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+#border_margin 0
+default_color 000000
+#default_color afafaf
+#default_color C8CDFF
+default_shade_color black
+default_outline_color black
+default_bar_size 150 8
+override_utf8_locale no
+
+alignment top_left
+gap_x 150
+gap_y 50
+minimum_size 240
+short_units yes
+pad_percents 2
+maximum_width 300
+
+####################################################################################################
+#  Output
+####################################################################################################
+TEXT
+${color light green}${font Ubuntu:size=12}SERVICE MONITOR ${hr 1}${font}
+
+${execpi 10 ./pingtest-dns CableBox}
+${execpi 10 ./portlookup cablebox 53 DNS}
+${execpi 10 ./portlookup cablebox 80 HTTP}
+${execpi 10 ./portlookup cablebox 5060 SIP}
+
+${execpi 10 ./pingtest-dns RedBox}
+${execpi 10 ./portlookup redbox 23 Telnet}
+${execpi 10 ./portlookup redbox 53 DNS}
+${execpi 10 ./portlookup redbox 80 HTTP}
+${execpi 10 ./portlookup redbox 5060 SIP}
+
+${execpi 10 ./pingtest-dns DiscoBox}
+${execpi 10 ./portlookup discobox 22 SSH}
+${execpi 10 ./portlookup discobox 443 HTTPS}
+
+${execpi 10 ./pingtest-dns BlueBox}
+${execpi 10 ./portlookup bluebox 22 SSH}
+${execpi 10 ./portlookup bluebox 443 HTTPS}
+
+${execpi 10 ./pingtest-dns RubyBox}
+#${execpi 10 ./portlookup rubybox 23 Telnet}
+${execpi 10 ./portlookup rubybox 53 DNS}
+${execpi 10 ./portlookup rubybox 80 HTTP}
+${execpi 10 ./portlookup rubybox 5060 SIP}
+
+#${execpi 10 ./pingtest-dns FlitzBox}
+#${execpi 10 ./pingtest-dns tvBox}
+${execpi 10 ./pingtest-dns pibox}
+${voffset -1}${execpi 10 ./portlookup pibox 22 SSH}
+${execpi 10 ./portlookup pibox 53 DNS}
+${execpi 10 ./portlookup pibox 445 SMB}
+#${execpi 10 ./portlookup pibox 3128 HTTP-Proxy}
+#${execpi 10 ./portlookup pibox 4080 mlNet}
+#${execpi 10 ./portlookup pibox 8200 minidlna}
+#${execpi 10 ./portlookup pibox 10000 webmin}
+
+${execpi 10 ./pingtest-dns BlackBox}
+${voffset -1}${execpi 10 ./portlookup blackbox 22 SSH}
+${execpi 10 ./portlookup blackbox 445 SMB}
+#${execpi 10 ./portlookup blackbox 443 HTTPS}
+#${execpi 10 ./portlookup blackbox 1862 Plexdlna}
+${execpi 10 ./portlookup blackbox 8200 minidlna}
+${execpi 10 ./portlookup blackbox 10000 webmin}
+
+#${execpi 10 ./pingtest-dns Owncloud}
+#${voffset -1}${execpi 10 ./portlookup owncloud 22 SSH}
+#${execpi 10 ./portlookup owncloud 443 HTTPS}
+
+${execpi 10 ./pingtest-dns BadWolf-0ne}
+${execpi 10 ./pingtest-dns FlatBox}
+${execpi 10 ./pingtest-dns FellyTone-AHD}
+${execpi 10 ./pingtest-dns FellyTone-HD}
+${execpi 10 ./pingtest-dns FellyTone-BD}
+${execpi 10 ./pingtest-dns CatFlap-JD}
+${execpi 10 ./pingtest-dns WIDHP}
+${execpi 10 ./pingtest-dns Hexenpups}
+${execpi 10 ./pingtest-dns PrintBox}
+
+${execpi 60 ./pingtest-dns google.com}
+#${execpi 60 ./pingtest-dns goonfleet.com}
+

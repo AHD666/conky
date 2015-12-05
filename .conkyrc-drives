@@ -1,0 +1,69 @@
+use_xft yes
+xftfont agave:size=7
+
+update_interval 1
+total_run_times 0
+
+text_buffer_size 2048
+double_buffer yes
+no_buffers yes
+
+own_window yes
+own_window_color 3D3D3D
+#own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+
+border_margin 0
+default_color 000000
+default_shade_color black
+default_outline_color black
+default_bar_size 150 8
+
+override_utf8_locale no
+
+alignment top_left
+gap_x 550
+gap_y 900
+
+minimum_size 300 800
+short_units yes
+pad_percents 2
+maximum_width 300
+
+####################################################################################################
+#  Output
+####################################################################################################
+
+TEXT
+${color light green}${font Ubuntu:size=12}STORAGE${hr 1}${font}
+
+Root: ${alignr}${offset -15}${fs_used /} / ${fs_size /}${alignr}${fs_bar 8,170/}
+I/O Read: ${alignr}${offset -10}${diskio_read mmcblk0p2 }${alignr}${diskiograph_read mmcblk0p2  30,170 99ff9e 99ff9d }
+${voffset -6}I/O Write: ${alignr}${offset -10}${diskio_write mmcblk0p2 }${alignr}${diskiograph_write mmcblk0p2 30,170 FFAAE2 FFAAE3}
+
+#Var: ${alignr}${offset -10}${fs_used /var} / ${fs_size /var}${alignr}${fs_bar 8,170 /var}
+#I/O Read: ${alignr}${offset -10}${diskio_read sdc2}${alignr}${diskiograph_read sdc2 30,170 99ff9e 99ff9d}
+#${voffset -6}I/O Write: ${alignr}${offset -10}${diskio_write sdc2}${alignr}${diskiograph_write sdc2 30,170 FFAAE2 FFAAE3}
+
+#Home: ${alignr}${offset -10}${fs_used /home} / ${fs_size /home}${alignr}${fs_bar 8,170 /home}
+#I/O Read: ${alignr}${offset -10}${diskio_read sdb1}${alignr}${diskiograph_read sdb1 30,170 99ff9e 99ff9d}
+#${voffset -6}I/O Write: ${alignr}${offset -10}${diskio_write sdb1}${alignr}${diskiograph_write sdb1 30,170 FFAAE2 FFAAE3}
+
+#Temp: ${alignr}${offset -10}${fs_used /home/ahd/tmp} / ${fs_size /home/ahd/tmp}${alignr}${fs_bar 8,170 /home/ahd/tmp}
+#I/O Read: ${alignr}${offset -10}${diskio_read sdc1}${alignr}${diskiograph_read sdc1 30,170 99ff9e 99ff9d}
+#${voffset -6}I/O Write: ${alignr}${offset -10}${diskio_write sdc1}${alignr}${diskiograph_write sdc1 30,170 FFAAE2 FFAAE3}
+
+#${font StyleBats:size=20}Â${font} ${voffset -10}${font Ubuntu:size=10}REMOVABLE   ${hr 2}${font}
+
+#BlackBox: ${alignr}${offset -10}${fs_used /mnt/blackbox/ahd} / ${fs_size /mnt/blackbox/ahd}${alignr}${fs_bar /mnt/blackbox/ahd}
+#Lycosa: ${alignr}${offset -10}${fs_used /mnt/lycosa/ahd} / ${fs_size /mnt/lycosa/ahd}${alignr}${fs_bar /mnt/lycosa/ahd}
+#${offset 27}${font}${offset 8}${voffset 0}L: ${alignr}${offset -10}${fs_used /mnt/lycosa/ahd/disks/carrier2} / ${fs_size /mnt/lycosa/ahd}${alignr}${fs_bar /mnt/lycosa/ahd}
+#${if_mounted /run/media/ahd/Flash32}Flash-32: ${alignr}${offset -10}${fs_used /run/media/ahd/Flash32} / ${fs_size /run/media/ahd/Flash32}${alignr}${fs_bar /run/media/ahd/Flash32}$endif
+#${if_mounted /run/media/ahd/TC2}TC2: ${alignr}${offset -10}${fs_used /run/media/ahd/TC2} / ${fs_size /run/media/ahd/TC2}${alignr}${fs_bar /run/media/ahd/TC2}$endif
+#${if_mounted /run/media/ahd/GC1}GC1: ${alignr}${offset -10}${fs_used /run/media/ahd/GC1} / ${fs_size /run/media/ahd/GC1}${alignr}${fs_bar /run/media/ahd/GC1}$endif

@@ -1,0 +1,60 @@
+use_xft yes
+#xftfont Ubuntu:size=8
+xftfont anka/coder condensed:size=9
+update_interval 0.5
+total_run_times 0
+
+text_buffer_size 2048
+double_buffer yes
+no_buffers yes
+
+own_window yes
+own_window_color 3D3D3D
+#own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+border_margin 0
+default_color C8CDFF
+default_shade_color black
+default_outline_color black
+default_bar_size 100 8
+
+#uppercase yes
+override_utf8_locale no
+
+alignment top_left
+gap_x 50
+gap_y 400
+
+minimum_size 300
+short_units yes
+pad_percents 2
+maximum_width 300
+default_outline_color black
+default_shade_color black
+####################################################################################################
+#  Output
+####################################################################################################
+
+TEXT
+${color light green}${font Ubuntu:size=12}MEMORY${hr 1}${font}
+
+${font}${offset 8}${voffset -12}RAM: ${alignr}${offset -10}${mem} / ${memmax}${alignr}${membar 8,150}
+${offset 30}Swap: ${alignr}${offset -10}${swap} / ${swapmax}${alignr}${swapbar 8,150}
+
+Top Processes${alignr}  proc id      cpu%    mem%
+${voffset 4}1  -  ${top_mem name 1}${alignr}${goto 170}${top_mem pid 1} ${goto 222}${top_mem cpu 1} ${goto 274}${top_mem mem 1}
+2  -  ${top_mem name 2}${alignr}${goto 170}${top_mem pid 2} ${goto 222}${top_mem cpu 2} ${goto 274}${top_mem mem 2}
+3  -  ${top_mem name 3}${alignr}${goto 170}${top_mem pid 3} ${goto 222}${top_mem cpu 3} ${goto 274}${top_mem mem 3}
+4  -  ${top_mem name 4}${alignr}${goto 170}${top_mem pid 4} ${goto 222}${top_mem cpu 4} ${goto 274}${top_mem mem 4}
+5  -  ${top_mem name 5}${alignr}${goto 170}${top_mem pid 5} ${goto 222}${top_mem cpu 5} ${goto 274}${top_mem mem 5}
+
+${buffers}
+${cached}
+
