@@ -12,9 +12,9 @@ Relevant config files are:
 
 All expect .conkyrc-service are standalone.
 .conkyrc-service starts various shell scripts which in turn need a few other programs to run
-	nmap
-	nslookup
-	ping
+	- nmap
+	- nslookup
+	- ping
 
 - pingtest-dns <some.system.name>
 	checks if the system is available
