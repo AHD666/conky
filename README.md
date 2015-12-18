@@ -14,9 +14,9 @@
 - Modifications needed in .conkyrc-service
 	- Hostnames and ports (set it to stuff you need to monitor)
 	- Example for one host:
-		- ${execpi 10 ./pingtest-dns <hostname>}
-		- ${execpi 10 ./portlookup <hostname> <port> <port name>}
-		- ${execpi 10 ./portlookup <hostname> 80 HTTP}
+		- ${execpi 10 ./pingtest-dns hostname}
+		- ${execpi 10 ./portlookup hostname port port name}
+		- ${execpi 10 ./portlookup hostname 80 HTTP}
 - conkyrc-service starts various shell scripts which in turn need a few other programs to run
 	- nmap
 	- nslookup
