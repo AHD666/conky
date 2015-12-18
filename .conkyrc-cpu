@@ -54,10 +54,10 @@ ${voffset -0}CPU Core 1: ${alignr}${offset -10}${cpu cpu1}%${alignr}${cpubar cpu
 ${voffset -0}CPU Core 2: ${alignr}${offset -10}${cpu cpu2}%${alignr}${cpubar cpu2 8,170}
 ${voffset -0}CPU Core 3: ${alignr}${offset -10}${cpu cpu3}%${alignr}${cpubar cpu3 8,170}
 ${voffset -0}CPU Core 4: ${alignr}${offset -10}${cpu cpu4}%${alignr}${cpubar cpu4 8,170}
-#${voffset -0}CPU Core 5: ${alignr}${offset -10}${cpu cpu5}%${alignr}${cpubar cpu5 8,170}
-#${voffset -0}CPU Core 6: ${alignr}${offset -10}${cpu cpu6}%${alignr}${cpubar cpu6 8,170}
-#${voffset -0}CPU Core 7: ${alignr}${offset -10}${cpu cpu7}%${alignr}${cpubar cpu7 8,170}
-#${voffset -0}CPU Core 8: ${alignr}${offset -10}${cpu cpu8}%${alignr}${cpubar cpu8 8,170}
+${voffset -0}CPU Core 5: ${alignr}${offset -10}${cpu cpu5}%${alignr}${cpubar cpu5 8,170}
+${voffset -0}CPU Core 6: ${alignr}${offset -10}${cpu cpu6}%${alignr}${cpubar cpu6 8,170}
+${voffset -0}CPU Core 7: ${alignr}${offset -10}${cpu cpu7}%${alignr}${cpubar cpu7 8,170}
+${voffset -0}CPU Core 8: ${alignr}${offset -10}${cpu cpu8}%${alignr}${cpubar cpu8 8,170}
 
 Top Processes${alignr}${goto 170}proc id${goto 250}cpu% ${goto 290}mem%
 ${voffset -2}1  -  ${top name 1}${alignr}${goto 170}${top pid 1} ${goto 220}${top cpu 1} ${goto 270}${top mem 1}

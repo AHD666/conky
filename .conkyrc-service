@@ -82,7 +82,7 @@ ${voffset -1}${execpi 10 ./portlookup blackbox 22 SSH}
 ${execpi 10 ./portlookup blackbox 445 SMB}
 #${execpi 10 ./portlookup blackbox 443 HTTPS}
 #${execpi 10 ./portlookup blackbox 1862 Plexdlna}
-${execpi 10 ./portlookup blackbox 8200 minidlna}
+#${execpi 10 ./portlookup blackbox 8200 minidlna}
 ${execpi 10 ./portlookup blackbox 10000 webmin}
 
 #${execpi 10 ./pingtest-dns Owncloud}
@@ -90,15 +90,12 @@ ${execpi 10 ./portlookup blackbox 10000 webmin}
 #${execpi 10 ./portlookup owncloud 443 HTTPS}
 
 ${execpi 10 ./pingtest-dns BadWolf-0ne}
+${execpi 10 ./pingtest-dns PiBox}
 ${execpi 10 ./pingtest-dns FlatBox}
-${execpi 10 ./pingtest-dns FellyTone-AHD}
-${execpi 10 ./pingtest-dns FellyTone-HD}
-${execpi 10 ./pingtest-dns FellyTone-BD}
-${execpi 10 ./pingtest-dns CatFlap-JD}
-${execpi 10 ./pingtest-dns WIDHP}
-${execpi 10 ./pingtest-dns Hexenpups}
-${execpi 10 ./pingtest-dns PrintBox}
+${execpi 10 ./pingtest-dns some.system}
+${execpi 10 ./pingtest-dns another.system}
+${execpi 10 ./pingtest-dns yet.more.systems}
 
 ${execpi 60 ./pingtest-dns google.com}
-#${execpi 60 ./pingtest-dns goonfleet.com}
+
 
