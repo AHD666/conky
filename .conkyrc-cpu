@@ -2,13 +2,12 @@ use_xft yes
 xftfont agave:size=9
 update_interval 1
 total_run_times 0
-
 text_buffer_size 2048
 double_buffer yes
 #no_buffers yes
 
-own_window yes
-own_window_color 3D3D3D
+#own_window yes
+#own_window_color 3D3D3D
 #own_window_type override
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
@@ -18,7 +17,7 @@ draw_outline no
 draw_borders no
 draw_graph_borders yes
 
-border_margin 0
+#border_margin 0
 #default_color ADB7E4
 default_color light green
 default_shade_color black
@@ -51,13 +50,13 @@ CPU Freq: ${freq}MHz ${alignr}Temp: ${acpitemp}C
 CPU Total: ${alignr}${cpu cpu0}% ${alignr}${cpubar cpu0 8,200}
 ${alignr}${cpugraph 50,270 FFAAE2 FFAAE3 s}
 ${voffset -0}CPU Core 1: ${alignr}${offset -10}${cpu cpu1}%${alignr}${cpubar cpu1 8,170}
-${voffset -0}CPU Core 2: ${alignr}${offset -10}${cpu cpu2}%${alignr}${cpubar cpu2 8,170}
-${voffset -0}CPU Core 3: ${alignr}${offset -10}${cpu cpu3}%${alignr}${cpubar cpu3 8,170}
-${voffset -0}CPU Core 4: ${alignr}${offset -10}${cpu cpu4}%${alignr}${cpubar cpu4 8,170}
-${voffset -0}CPU Core 5: ${alignr}${offset -10}${cpu cpu5}%${alignr}${cpubar cpu5 8,170}
-${voffset -0}CPU Core 6: ${alignr}${offset -10}${cpu cpu6}%${alignr}${cpubar cpu6 8,170}
-${voffset -0}CPU Core 7: ${alignr}${offset -10}${cpu cpu7}%${alignr}${cpubar cpu7 8,170}
-${voffset -0}CPU Core 8: ${alignr}${offset -10}${cpu cpu8}%${alignr}${cpubar cpu8 8,170}
+#${voffset -0}CPU Core 2: ${alignr}${offset -10}${cpu cpu2}%${alignr}${cpubar cpu2 8,170}
+#${voffset -0}CPU Core 3: ${alignr}${offset -10}${cpu cpu3}%${alignr}${cpubar cpu3 8,170}
+#${voffset -0}CPU Core 4: ${alignr}${offset -10}${cpu cpu4}%${alignr}${cpubar cpu4 8,170}
+#${voffset -0}CPU Core 5: ${alignr}${offset -10}${cpu cpu5}%${alignr}${cpubar cpu5 8,170}
+#${voffset -0}CPU Core 6: ${alignr}${offset -10}${cpu cpu6}%${alignr}${cpubar cpu6 8,170}
+#${voffset -0}CPU Core 7: ${alignr}${offset -10}${cpu cpu7}%${alignr}${cpubar cpu7 8,170}
+#${voffset -0}CPU Core 8: ${alignr}${offset -10}${cpu cpu8}%${alignr}${cpubar cpu8 8,170}
 
 Top Processes${alignr}${goto 170}proc id${goto 250}cpu% ${goto 290}mem%
 ${voffset -2}1  -  ${top name 1}${alignr}${goto 170}${top pid 1} ${goto 220}${top cpu 1} ${goto 270}${top mem 1}
