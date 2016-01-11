@@ -5,7 +5,7 @@
 		- nmap
 		- nslookup
 		- ping
-	Intallation
+	- Intallation
 		- copy everything into a directory of your choice
 		- adjust the following settings to your system
 			- xftfont
